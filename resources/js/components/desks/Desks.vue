@@ -1,17 +1,17 @@
 <template>
     <div class="container">
-        <h1>Доски</h1>
+        <h1>Desks</h1>
         <form @submit.prevent="addNewDesk">
             <div class="mb-3">
-                <input type="text" v-model="name" class="form-control" :class="{'is-invalid': $v.name.$error}" v-model.trim="$v.name.$model" id="deskInputText" placeholder="Введите название доски">
+                <input type="text" v-model="name" class="form-control" :class="{'is-invalid': $v.name.$error}" v-model.trim="$v.name.$model" id="deskInputText" placeholder="Enter board name">
                 <div class="invalid-feedback" v-if="!$v.name.required">
-                    Обязательное поле
+                  Required field
                 </div>
                 <div class="invalid-feedback" v-if="!$v.name.maxLength">
                     Макс. кол. символов: {{$v.name.$params.maxLength.max}}
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Добавить</button>
+            <button type="submit" class="btn btn-primary">Add</button>
         </form>
         <div class="alert alert-danger mt-3" role="alert" v-if="errored">
             Ошибка загрузки данных! <br>
@@ -23,7 +23,7 @@
                     <router-link class="card-body" :to="{name: 'showDesk', params: {deskId: desk.id}}">
                         <h4 class="card-title">{{desk.name}}</h4>
                     </router-link>
-                    <button type="button" class="btn btn-danger mt-3" @click="deleteDesk(desk.id)">Удалить</button>
+                    <button type="button" class="btn btn-danger mt-3" @click="deleteDesk(desk.id)">Delete</button>
                 </div>
             </div>
         </div>

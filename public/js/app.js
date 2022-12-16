@@ -42226,7 +42226,7 @@ var render = function () {
                   staticClass: "nav-item nav-link",
                   attrs: { to: { name: "home" } },
                 },
-                [_vm._v("Главная")]
+                [_vm._v("Main")]
               ),
               _vm._v(" "),
               _c(
@@ -42235,7 +42235,7 @@ var render = function () {
                   staticClass: "nav-item nav-link",
                   attrs: { to: { name: "desks" } },
                 },
-                [_vm._v("Доски")]
+                [_vm._v("Desks")]
               ),
             ],
             1
@@ -42278,7 +42278,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("Главная")]),
+      _c("h1", [_vm._v("Main")]),
     ])
   },
 ]
@@ -42305,7 +42305,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v("Доски")]),
+    _c("h1", [_vm._v("Desks")]),
     _vm._v(" "),
     _c(
       "form",
@@ -42340,7 +42340,7 @@ var render = function () {
             attrs: {
               type: "text",
               id: "deskInputText",
-              placeholder: "Введите название доски",
+              placeholder: "Enter board name",
             },
             domProps: { value: _vm.name, value: _vm.$v.name.$model },
             on: {
@@ -42366,7 +42366,7 @@ var render = function () {
           _vm._v(" "),
           !_vm.$v.name.required
             ? _c("div", { staticClass: "invalid-feedback" }, [
-                _vm._v("\n                Обязательное поле\n            "),
+                _vm._v("\n                Required field\n            "),
               ])
             : _vm._e(),
           _vm._v(" "),
@@ -42384,7 +42384,7 @@ var render = function () {
         _c(
           "button",
           { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-          [_vm._v("Добавить")]
+          [_vm._v("Add")]
         ),
       ]
     ),
@@ -42436,7 +42436,7 @@ var render = function () {
                     },
                   },
                 },
-                [_vm._v("Удалить")]
+                [_vm._v("Delete")]
               ),
             ],
             1
@@ -42512,7 +42512,7 @@ var render = function () {
       _vm._v(" "),
       !_vm.$v.name.required
         ? _c("div", { staticClass: "invalid-feedback" }, [
-            _vm._v("\n            Обязательное поле\n        "),
+            _vm._v("\n            Required field\n        "),
           ])
         : _vm._e(),
       _vm._v(" "),
@@ -42554,7 +42554,7 @@ var render = function () {
             attrs: {
               type: "text",
               id: "deskInputText",
-              placeholder: "Введите название списка",
+              placeholder: "Enter list name",
             },
             domProps: { value: _vm.$v.desk_list_name.$model },
             on: {
@@ -42576,7 +42576,7 @@ var render = function () {
           _vm._v(" "),
           !_vm.$v.desk_list_name.required
             ? _c("div", { staticClass: "invalid-feedback" }, [
-                _vm._v("\n                Обязательное поле\n            "),
+                _vm._v("\n                Required field\n            "),
               ])
             : _vm._e(),
           _vm._v(" "),
@@ -42594,7 +42594,7 @@ var render = function () {
         _c(
           "button",
           { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-          [_vm._v("Добавить список")]
+          [_vm._v("Add list")]
         ),
       ]
     ),
@@ -42650,7 +42650,7 @@ var render = function () {
                           },
                           attrs: {
                             type: "text",
-                            placeholder: "Введите название списка",
+                            placeholder: "Enter list name",
                           },
                           domProps: { value: desk_list.name },
                           on: {
@@ -42666,7 +42666,7 @@ var render = function () {
                         !_vm.$v.desk_lists.$each[index].name.required
                           ? _c("div", { staticClass: "invalid-feedback" }, [
                               _vm._v(
-                                "\n                            Обязательное поле\n                        "
+                                "\n                            Required field\n                        "
                               ),
                             ])
                           : _vm._e(),
@@ -42727,7 +42727,7 @@ var render = function () {
                       },
                     },
                   },
-                  [_vm._v("Удалить список")]
+                  [_vm._v("Delete list")]
                 ),
                 _vm._v(" "),
                 _vm._l(desk_list.cards, function (card) {
@@ -42763,7 +42763,7 @@ var render = function () {
                           },
                           [
                             _vm._v(
-                              "\n                                Открыть\n                            "
+                              "\n                                Open\n                            "
                             ),
                           ]
                         ),
@@ -42779,7 +42779,7 @@ var render = function () {
                               },
                             },
                           },
-                          [_vm._v("Удалить")]
+                          [_vm._v("Delete")]
                         ),
                       ]),
                     ]
@@ -42814,7 +42814,7 @@ var render = function () {
                       },
                       attrs: {
                         type: "text",
-                        placeholder: "Введите название карточки",
+                        placeholder: "Enter card name",
                       },
                       domProps: { value: _vm.card_names[desk_list.id] },
                       on: {
@@ -42834,7 +42834,7 @@ var render = function () {
                     !_vm.$v.card_names.$each[desk_list.id].required
                       ? _c("div", { staticClass: "invalid-feedback" }, [
                           _vm._v(
-                            "\n                            Обязательное поле\n                        "
+                            "\n                            Required field\n                        "
                           ),
                         ])
                       : _vm._e(),
@@ -42902,7 +42902,7 @@ var render = function () {
                                     },
                                     attrs: {
                                       type: "text",
-                                      placeholder: "Введите название карточки",
+                                      placeholder: "Enter card name",
                                     },
                                     domProps: { value: _vm.current_card.name },
                                     on: {
@@ -42925,7 +42925,7 @@ var render = function () {
                                         { staticClass: "invalid-feedback" },
                                         [
                                           _vm._v(
-                                            "\n                                            Обязательное поле\n                                        "
+                                            "\n                                            Required field\n                                        "
                                           ),
                                         ]
                                       )
@@ -43117,7 +43117,7 @@ var render = function () {
                                                   attrs: {
                                                     type: "text",
                                                     placeholder:
-                                                      "Введите название задачи",
+                                                      "Enter task name",
                                                   },
                                                   domProps: {
                                                     value:
@@ -43224,7 +43224,7 @@ var render = function () {
                                     },
                                     attrs: {
                                       type: "text",
-                                      placeholder: "Введите название задачи",
+                                      placeholder: "Enter task name",
                                     },
                                     domProps: { value: _vm.new_task_name },
                                     on: {
@@ -43243,7 +43243,7 @@ var render = function () {
                                         { staticClass: "invalid-feedback" },
                                         [
                                           _vm._v(
-                                            "\n                                                Обязательное поле\n                                            "
+                                            "\n                                                Required field\n                                            "
                                           ),
                                         ]
                                       )

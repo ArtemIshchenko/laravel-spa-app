@@ -4,7 +4,7 @@
         <div class="form-group">
             <input type="text" class="form-control" :class="{'is-invalid': $v.name.$error}" v-model.trim="$v.name.$model" @blur="saveName">
             <div class="invalid-feedback" v-if="!$v.name.required">
-                Обязательное поле
+              Required field
             </div>
             <div class="invalid-feedback" v-if="!$v.name.maxLength">
                 Макс. кол. символов: {{$v.name.$params.maxLength.max}}
@@ -12,15 +12,15 @@
         </div>
         <form @submit.prevent="addNewDeskList">
             <div class="mb-3 mt-3">
-                <input type="text" class="form-control" :class="{'is-invalid': $v.desk_list_name.$error}" v-model.trim="$v.desk_list_name.$model" id="deskInputText" placeholder="Введите название списка">
+                <input type="text" class="form-control" :class="{'is-invalid': $v.desk_list_name.$error}" v-model.trim="$v.desk_list_name.$model" id="deskInputText" placeholder="Enter list name">
                 <div class="invalid-feedback" v-if="!$v.desk_list_name.required">
-                    Обязательное поле
+                  Required field
                 </div>
                 <div class="invalid-feedback" v-if="!$v.desk_list_name.maxLength">
                     Макс. кол. символов: {{$v.desk_list_name.$params.maxLength.max}}
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Добавить список</button>
+            <button type="submit" class="btn btn-primary">Add list</button>
         </form>
         <div class="alert alert-danger" role="alert" v-if="errored">
             Ошибка загрузки данных!
@@ -30,9 +30,9 @@
                 <div class="card mt-3">
                     <div class="card-body">
                         <form @submit.prevent="updateDeskList(desk_list.id, desk_list.name)" v-if="desk_list_input_id == desk_list.id" class="d-flex justify-content-between align-items-center">
-                            <input type="text" v-model="desk_list.name" class="form-control" :class="{'is-invalid': $v.desk_lists.$each[index].name.$error}" placeholder="Введите название списка">
+                            <input type="text" v-model="desk_list.name" class="form-control" :class="{'is-invalid': $v.desk_lists.$each[index].name.$error}" placeholder="Enter list name">
                             <div class="invalid-feedback" v-if="!$v.desk_lists.$each[index].name.required">
-                                Обязательное поле
+                              Required field
                             </div>
                             <div class="invalid-feedback" v-if="!$v.desk_lists.$each[index].name.maxLength">
                                 Макс. кол. символов: {{$v.desk_lists.$each[index].name.$params.maxLength.max}}
@@ -40,20 +40,20 @@
                             <button type="button" @click="desk_list_input_id = null" class="btn-close" aria-label="Close"></button>
                         </form>
                         <h4 v-else class="card-title d-flex justify-content-between align-items-center" style="cursor: pointer;" @click="desk_list_input_id = desk_list.id">{{desk_list.name}}<i class="fas fa-pencil-alt" style="font-size: 15px;"></i></h4>
-                        <button type="button" class="btn btn-danger mt-3" @click="deleteDeskList(desk_list.id)">Удалить список</button>
+                        <button type="button" class="btn btn-danger mt-3" @click="deleteDeskList(desk_list.id)">Delete list</button>
                         <div class="card mt-3 bg-light" v-for="card in desk_list.cards" :key="card.id">
                             <div class="card-body">
                                 <h4 class="card-title d-flex justify-content-between align-items-center mb-3" style="cursor: pointer;">{{card.name}}</h4>
                                 <button type="button" @click="getCard(card.id)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Открыть
+                                    Open
                                 </button>
-                                <button type="button" class="btn btn-secondary" @click="deleteCard(card.id)">Удалить</button>
+                                <button type="button" class="btn btn-secondary" @click="deleteCard(card.id)">Delete</button>
                             </div>
                         </div>
                         <form @submit.prevent="addNewCard(desk_list.id)" class="mt-3">
-                            <input type="text" v-model="card_names[desk_list.id]" class="form-control" :class="{'is-invalid': $v.card_names.$each[desk_list.id].$error}" placeholder="Введите название карточки">
+                            <input type="text" v-model="card_names[desk_list.id]" class="form-control" :class="{'is-invalid': $v.card_names.$each[desk_list.id].$error}" placeholder="Enter card name">
                             <div class="invalid-feedback" v-if="!$v.card_names.$each[desk_list.id].required">
-                                Обязательное поле
+                              Required field
                             </div>
                             <div class="invalid-feedback" v-if="!$v.card_names.$each[desk_list.id].maxLength">
                                 Макс. кол. символов: {{$v.card_names.$each[desk_list.id].$params.maxLength.max}}
@@ -65,9 +65,9 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <form @submit.prevent="updateCardName" v-if="show_card_name_input" class="d-flex justify-content-between align-items-center">
-                                            <input type="text" v-model="current_card.name" class="form-control" :class="{'is-invalid': $v.current_card.name.$error}" placeholder="Введите название карточки">
+                                            <input type="text" v-model="current_card.name" class="form-control" :class="{'is-invalid': $v.current_card.name.$error}" placeholder="Enter card name">
                                             <div class="invalid-feedback" v-if="!$v.current_card.name.required">
-                                                Обязательное поле
+                                              Required field
                                             </div>
                                             <div class="invalid-feedback" v-if="!$v.current_card.name.maxLength">
                                                 Макс. кол. символов: {{$v.current_card.name.$params.maxLength.max}}
@@ -81,7 +81,7 @@
                                         <div class="form-check" v-for="(task, index) in current_card.tasks">
                                             <input class="form-check-input" type="checkbox" @change="updateTask(current_card.tasks[index])" :id="'inlineCheckbox1' + index" value="option1" v-model="current_card.tasks[index].is_done">
                                             <form @submit.prevent="updateTask(current_card.tasks[index])" v-if="task_input_name_id == task.id">
-                                                <input type="text" v-model="current_card.tasks[index].name" v-if="task_input_name_id == task.id" class="form-control" placeholder="Введите название задачи">
+                                                <input type="text" v-model="current_card.tasks[index].name" v-if="task_input_name_id == task.id" class="form-control" placeholder="Enter task name">
                                             </form>
                                             <label v-else class="form-check-label" :for="'inlineCheckbox1' + index">{{task.name}}</label>&nbsp;&nbsp;
                                             <span @click="task_input_name_id = task.id" v-if="task_input_name_id != task.id"><i class="fas fa-pencil-alt" style="font-size: 13px;"></i></span>
@@ -89,9 +89,9 @@
                                         </div>
                                         <form @submit.prevent="addNewTask" class="mt-3">
                                             <div class="form-group">
-                                                <input type="text" v-model="new_task_name" class="form-control" :class="{'is-invalid': $v.new_task_name.$error}" placeholder="Введите название задачи">
+                                                <input type="text" v-model="new_task_name" class="form-control" :class="{'is-invalid': $v.new_task_name.$error}" placeholder="Enter task name">
                                                 <div class="invalid-feedback" v-if="!$v.new_task_name.required">
-                                                    Обязательное поле
+                                                  Required field
                                                 </div>
                                                 <div class="invalid-feedback" v-if="!$v.new_task_name.maxLength">
                                                     Макс. кол. символов: {{$v.new_task_name.$params.maxLength.max}}

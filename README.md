@@ -13,3 +13,15 @@ Every desktop, list, card, task is added, edited and deleted from one page.
 <img src="public/images/tasks.png" alt="Tasks">
 
 The application is written using Laravel and Vue.js frameworks
+
+
+
+## Installation.
+
+Clone the application with Git command: git clone https://github.com/ArtemIshchenko/laravel-spa-app.git.
+Configure the server and create the database.
+Update vendors via composer: php composer.phar install.
+Migrate to the database: php artisan migrate.
+Running Seeders: php artisan db:seed.
+
+The application is ready to use.
